@@ -30,7 +30,7 @@ public class User {
 	private String lastName;
 	
 	@Column(name = "email_id")
-	private String emailId;
+	private String email;
 	
 	@Column(name = "contact_number")
 	private String contactNumber;
@@ -50,7 +50,7 @@ public class User {
 	@Column(name = "creation_time")
 	private Timestamp creationTime;
 	
-	@Column(name = "updation_tim")
+	@Column(name = "updation_time")
 	private Timestamp updationTime;
 	
 }
