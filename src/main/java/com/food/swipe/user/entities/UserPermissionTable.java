@@ -15,28 +15,19 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "usr_prmsn_tbl")
+public class UserPermissionTable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_permission_id")
+	private Long userPermissionId;
+	
 	@Column(name = "user_id")
 	private Long userId;
 	
-	@Column(name = "first_name")
-	private String firstName;
-	
-	@Column(name = "last_name")
-	private String lastName;
-	
-	@Column(name = "email_id")
-	private String emailId;
-	
-	@Column(name = "contact_number")
-	private String contactNumber;
-	
-	@Column(name = "password")
-	private String password;
+	@Column(name = "role_id")
+	private Long roleId;
 	
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
@@ -50,7 +41,6 @@ public class User {
 	@Column(name = "creation_time")
 	private Timestamp creationTime;
 	
-	@Column(name = "updation_tim")
+	@Column(name = "updation_time")
 	private Timestamp updationTime;
-	
 }
