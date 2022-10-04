@@ -2,7 +2,6 @@ package com.food.swipe.user.dto.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -29,7 +28,7 @@ public class RegisterUserRequest {
 	private String email;
 	
 	
-	@NotNull(message = ValidationConstants.PHONE_NUMBER_SHOULD_BE_PRESENT)
+	@NotBlank(message = ValidationConstants.PHONE_NUMBER_SHOULD_BE_PRESENT)
 	private String contactNumber;
 	
 	@NotBlank(message = ValidationConstants.PASSWORD_SHOULD_BE_PRESENT)

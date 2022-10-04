@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,8 +15,12 @@ import com.food.swipe.user.dto.request.RegisterUserRequest;
 import com.food.swipe.user.dto.response.RegisterUserResponse;
 import com.food.swipe.user.service.UserService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @RestController
 @RequestMapping("/v1/users")
+@CrossOrigin("*")
 public class UserController {
 
 	@Autowired
@@ -25,7 +30,7 @@ public class UserController {
 	public ResponseEntity<RegisterUserResponse> registerNewUser(
 			@Valid @RequestBody RegisterUserRequest userRequest) {
 		
-		
+		log.info("enetered controller");
 		return new ResponseEntity<>(userService.registerUser(userRequest), HttpStatus.OK);
 	}
 }
