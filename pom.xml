@@ -29,6 +29,21 @@
 		</sonar.exclusions>
 	</properties>
 
+	<!-- TODO: Remove this when transitioning from Packagecloud to Nexus repository for artifact management  -->
+	<repositories>
+		<repository>
+			<id>Bayvao-release</id>
+			<url>https://packagecloud.io/Bayvao/release/maven2</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<!-- TODO: Add this when transitioning from Packagecloud to Nexus repository for artifact management  -->
 <!--	<repositories>-->
 <!--		<repository>-->
 <!--			<id>nexus-snapshot</id>-->
@@ -139,6 +154,11 @@
 			<artifactId>exception-handler</artifactId>
 			<version>1.0.0.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>com.core.libraries</groupId>
+			<artifactId>logger</artifactId>
+			<version>1.0.0.RELEASE</version>
+		</dependency>
 
 	</dependencies>
 
@@ -211,7 +231,7 @@
 		</plugins>
 	</build>
 
-
+	<!-- TODO: Add this when transitioning from Packagecloud to Nexus repository for artifact management  -->
 <!--	<distributionManagement>-->
 <!--		<snapshotRepository>-->
 <!--			<id>nexus-snapshot</id>-->
@@ -223,13 +243,14 @@
 <!--		</repository>-->
 <!--	</distributionManagement>-->
 
+	<!-- TODO: Remove this when transitioning from Packagecloud to Nexus repository for artifact management  -->
 	<distributionManagement>
 		<repository>
-			<id>packagecloud.releases</id>
+			<id>packagecloud.release</id>
 			<url>packagecloud+https://packagecloud.io/Bayvao/release</url>
 		</repository>
 		<snapshotRepository>
-			<id>packagecloud.snapshots</id>
+			<id>packagecloud.snapshot</id>
 			<url>packagecloud+https://packagecloud.io/Bayvao/snapshot</url>
 		</snapshotRepository>
 	</distributionManagement>

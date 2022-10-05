@@ -2,6 +2,7 @@ package com.food.swipe.user.controllers;
 
 import javax.validation.Valid;
 
+import com.core.libraries.logging.annotation.LogControllerEntryExit;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -25,12 +26,12 @@ public class UserController {
 
 	@Autowired
 	private UserService userService;
-	
+
+	@LogControllerEntryExit
 	@PostMapping("/register")
 	public ResponseEntity<RegisterUserResponse> registerNewUser(
 			@Valid @RequestBody RegisterUserRequest userRequest) {
-		
-		log.info("enetered controller");
+
 		return new ResponseEntity<>(userService.registerUser(userRequest), HttpStatus.OK);
 	}
 }
