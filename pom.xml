@@ -141,10 +141,6 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
@@ -157,6 +153,11 @@
 		<dependency>
 			<groupId>com.core.libraries</groupId>
 			<artifactId>logger</artifactId>
+			<version>1.0.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>com.core.libraries</groupId>
+			<artifactId>common-security-filter</artifactId>
 			<version>1.0.0.RELEASE</version>
 		</dependency>
 

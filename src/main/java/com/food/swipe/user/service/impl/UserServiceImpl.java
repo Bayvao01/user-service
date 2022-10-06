@@ -23,8 +23,8 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private UserRepository userRepository;
 	
-	@Autowired
-	private PasswordEncoder bcryptPasswordEncoder;
+	//@Autowired
+	//private PasswordEncoder bcryptPasswordEncoder;
 
 	@LogEntryExit
 	@Override
@@ -37,8 +37,8 @@ public class UserServiceImpl implements UserService{
 		}
 		
 		User user = UserMapper.INSTANCE.mapUserRegistrationRequest(userRequest);
-		String encodedPassword = bcryptPasswordEncoder.encode(user.getPassword());
-		user.setPassword(encodedPassword);
+		//String encodedPassword = bcryptPasswordEncoder.encode(user.getPassword());
+		//user.setPassword(encodedPassword);
 		
 		userRepository.save(user);
 		
