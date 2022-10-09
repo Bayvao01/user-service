@@ -16,6 +16,7 @@ CREATE TABLE `user` (
   `contact_number` varchar(10) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   `is_enabled` tinyint(1) DEFAULT NULL,
+  `last_login_time` timestamp NULL DEFAULT NULL,
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
   `creation_time` timestamp NULL DEFAULT NULL,
@@ -27,7 +28,7 @@ CREATE TABLE `usr_prmsn_tbl` (
   `user_permission_id` bigint NOT NULL AUTO_INCREMENT,
   `user_id` bigint DEFAULT NULL,
   `role_id` bigint DEFAULT NULL,
-  `is_enabled` tinyint(1) DEFAULT NULL,
+  `is_enabled` boolean DEFAULT NULL,
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
   `creation_time` timestamp NULL DEFAULT NULL,
@@ -35,3 +36,7 @@ CREATE TABLE `usr_prmsn_tbl` (
   PRIMARY KEY (`user_permission_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+select * from user;
+
+insert into foodswipeuser.role (role_name) values ('Customer');
+insert into foodswipeuser.role (role_name) values ('Admin');

@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.food.swipe.user.constants.ValidationConstants;
+import java.util.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -34,5 +35,7 @@ public class RegisterUserRequest {
 	@NotBlank(message = ValidationConstants.PASSWORD_SHOULD_BE_PRESENT)
 	@Size(min = 8, max = 16, message = ValidationConstants.PASSWORD_LENGTH_VALIDATION)
 	private String password;
+
+	private List<String> roles;
 	
 }

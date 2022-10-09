@@ -22,7 +22,6 @@ public interface UserMapper {
 	public default void setRegistrationDataAfterMapping(@MappingTarget User target) {
 	     
 		target.setCreatedBy(target.getEmail());
-		target.setCreationTime(Timestamp.from(Instant.now()));
 		target.setEnabled(true);
 	 }
 }

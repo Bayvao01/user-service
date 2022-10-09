@@ -11,6 +11,8 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
 @NoArgsConstructor
@@ -37,10 +39,12 @@ public class UserPermissionTable {
 	
 	@Column(name = "updated_by")
 	private String updatedBy;
-	
+
+	@CreationTimestamp
 	@Column(name = "creation_time")
 	private Timestamp creationTime;
-	
+
+	@UpdateTimestamp
 	@Column(name = "updation_time")
 	private Timestamp updationTime;
 }

@@ -1,6 +1,7 @@
 package com.food.swipe.user.entities;
 
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,8 @@ import javax.persistence.Table;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 @Data
 @NoArgsConstructor
@@ -40,16 +43,21 @@ public class User {
 	
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
+
+	@Column(name = "last_login_time")
+	private Timestamp lastLoginTime;
 	
 	@Column(name = "created_by")
 	private String createdBy;
 	
 	@Column(name = "updated_by")
 	private String updatedBy;
-	
+
+	@CreationTimestamp
 	@Column(name = "creation_time")
 	private Timestamp creationTime;
-	
+
+	@UpdateTimestamp
 	@Column(name = "updation_time")
 	private Timestamp updationTime;
 	
