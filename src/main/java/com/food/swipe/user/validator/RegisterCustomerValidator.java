@@ -5,13 +5,13 @@ import java.util.Objects;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import com.food.swipe.user.dto.request.RegisterCustomerRequest;
+import com.food.swipe.user.dto.request.RegisterUserRequest;
 
 public class RegisterCustomerValidator
-		implements ConstraintValidator<CustomerValidatorConstraint, RegisterCustomerRequest> {
+		implements ConstraintValidator<CustomerValidatorConstraint, RegisterUserRequest> {
 
 	@Override
-	public boolean isValid(RegisterCustomerRequest request, ConstraintValidatorContext context) {
+	public boolean isValid(RegisterUserRequest request, ConstraintValidatorContext context) {
 		boolean isValid = true;
 
 		if (Objects.isNull(request)) {

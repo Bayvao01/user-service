@@ -10,5 +10,5 @@ public class ValidationConstants {
 	public static final String PHONE_NUMBER_SHOULD_BE_VALID = "Enter a valid phone number";
 	public static final String PASSWORD_SHOULD_BE_PRESENT = "Password cannot be empty";
 	public static final String PASSWORD_LENGTH_VALIDATION = "Password length should be minimum 8 and maximum 16 characters";
-	public static final String EMAIL_REGEX = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$";
+	public static final String EMAIL_REGEX = "^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$";
 }

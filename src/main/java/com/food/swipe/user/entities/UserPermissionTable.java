@@ -1,7 +1,6 @@
 package com.food.swipe.user.entities;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,34 +17,22 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Data
 @NoArgsConstructor
 @Entity
-@Table(name = "user")
-public class User {
+@Table(name = "usr_prmsn_tbl")
+public class UserPermissionTable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "user_permission_id")
+	private Long userPermissionId;
+	
 	@Column(name = "user_id")
 	private Long userId;
 	
-	@Column(name = "first_name")
-	private String firstName;
-	
-	@Column(name = "last_name")
-	private String lastName;
-	
-	@Column(name = "email_id")
-	private String email;
-	
-	@Column(name = "contact_number")
-	private String contactNumber;
-	
-	@Column(name = "password")
-	private String password;
+	@Column(name = "role_id")
+	private Long roleId;
 	
 	@Column(name = "is_enabled")
 	private boolean isEnabled;
-
-	@Column(name = "last_login_time")
-	private Timestamp lastLoginTime;
 	
 	@Column(name = "created_by")
 	private String createdBy;
@@ -60,5 +47,4 @@ public class User {
 	@UpdateTimestamp
 	@Column(name = "updation_time")
 	private Timestamp updationTime;
-	
 }
