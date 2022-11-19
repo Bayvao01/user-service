@@ -60,6 +60,9 @@ jobs:
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, Go, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
+    - name: Build with Maven
+      run: mvn -B clean install --file pom.xml
+    
     
     - name: Analyze with SonarCloud
       # You can pin the exact commit or the version.
@@ -78,8 +81,7 @@ jobs:
           # Adds more detail to both client and server-side analysis logs, activating DEBUG mode for the scanner, and adding client-side environment variables and system properties to the server-side log of analysis report processing.
           #-Dsonar.verbose= # optional, default is false
     
-    - name: Build with Maven
-      run: mvn -B clean install --file pom.xml
+
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
 
@@ -94,4 +96,3 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
- 
