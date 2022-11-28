@@ -21,6 +21,8 @@ npm-debug.log.*
 ######################
 # Eclipse
 ######################
+.github
+.github/**
 *.pydevproject
 .project
 .metadata
@@ -52,6 +54,7 @@ local.properties
 ######################
 # Intellij
 ######################
+.idea/**
 .idea/
 *.iml
 *.iws
